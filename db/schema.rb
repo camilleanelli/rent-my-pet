@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102154847) do
+ActiveRecord::Schema.define(version: 20151102161242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "cat_id"
+    t.integer  "start_time"
+    t.integer  "end_time"
+    t.integer  "renting_price"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "bookings", ["cat_id"], name: "index_bookings_on_cat_id", using: :btree
+  add_index "bookings", ["user_id"], name: "index_bookings_on_user_id", using: :btree
 
   create_table "cats", force: :cascade do |t|
     t.string   "name"
@@ -53,5 +66,7 @@ ActiveRecord::Schema.define(version: 20151102154847) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "bookings", "cats"
+  add_foreign_key "bookings", "users"
   add_foreign_key "cats", "users"
 end
