@@ -3,8 +3,11 @@
 <p>Vous avez réservé</p>
 
  <% current_user.bookings.each do |booking| %>
-  <p> <%= booking.cat_id %> </p>
-  <p> <%= booking.user_id %> </p>
+  <p> <%= booking.cat.name %> </p>
+  <p> <%= booking.renter.last_name %> </p>
   <p> <%= booking.renting_price %> </p>
+  <p> <%= booking.start_time %> </p>
+  <p> <%= booking.renting_price %> </p>
+
 
   <% end %>
