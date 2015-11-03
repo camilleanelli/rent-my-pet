@@ -57,6 +57,15 @@ $navbar-profile-border-width: 2px;
     background-color: transparent;
   }
 
+  .tinted {
+  background:
+    /* top, transparent red */
+    linear-gradient(
+      rgba(255, 0, 0, 0.45),
+      rgba(255, 0, 0, 0.45)
+    )
+}
+
   .navbar-nav > li > a:hover,
   .navbar-nav > .open > a:hover {
     color: $navbar-hover-color;
@@ -88,7 +97,7 @@ $navbar-profile-border-width: 2px;
 
   .navbar-brand img, .navbar-brand svg {
     height: $navbar-height;
-    padding: 0px;
+    padding: 3px;
   }
 
   .img-avatar{
