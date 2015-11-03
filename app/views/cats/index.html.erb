@@ -1,1 +1,19 @@
-hello
+<div class="container">
+
+<% @cats.each do |cat| %>
+<div class="thumbnail">
+<%= cat.name %>
+<%= cat.description %>
+<%= cat.price %>
+<%= cat.gender %>
+<%= cat.race %>
+
+<%= cat.address %>
+<%= cat.zip_code %>
+<%= cat.city %>
+</div>
+  <% end %>
+
+
+
+</div>
