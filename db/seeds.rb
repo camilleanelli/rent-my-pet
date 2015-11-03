@@ -11,7 +11,7 @@
   Cat.create(
   :name   => Faker::Name.first_name,
   :description    => Faker::Lorem.sentences,
-  :user_id => 2,
+  :user_id => 1,
   :gender => "male",
   :availability => true,
   :race => "roux",
