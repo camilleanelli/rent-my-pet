@@ -15,6 +15,8 @@
   :gender => "male",
   :availability => true,
   :race => "roux",
+  :age => Faker::Number.between(1, 17),
+  :price => 10,
   :zip_code => 75000,
   :city => "Paris",
   :address => "Villa Gaudelet",
