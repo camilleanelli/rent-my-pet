@@ -8,7 +8,11 @@
       <p><%= @cat.description %></p>
       <p><%= @cat.price %></p>
       <p><%= @cat.race %></p>
-      <div><button type="button" class="btn btn-warning">Réservez</button></div>
+
+      <div class="list-inline">
+      <li><button type="button" class="btn btn-warning">Réservez</button></li>
+      <li><%= link_to "retour", cats_path, class: "btn btn-warning active" %></li>
+    </div>
 
     </div>
     <div class="col-md-6">
