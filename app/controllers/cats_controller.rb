@@ -2,6 +2,7 @@ class CatsController < ApplicationController
   before_action :authenticate_user!
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_cats, only: [:show, :edit, :update, :destroy]
+
   def index
     @cats = Cat.all
   end
