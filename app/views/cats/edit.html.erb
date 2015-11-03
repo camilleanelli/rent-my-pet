@@ -1,20 +1,23 @@
-<div class="container">
+<div class="container form-new-cat">
+  <div class="row">
   <div class="col-md-6 col-md-offset-3">
 <%= simple_form_for @cat do |f| %>
-  <%= f.input :name, label: 'Nom: ' %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :gender, collection: [ "male", "femal" ] %>
+  <%= f.input :name, label: 'Nom:', placeholder: 'Boris' %>
+  <%= f.input :description, placeholder: 'Inscrivez toutes ses qualités!' %>
+  <%= f.input :price, label: 'Prix par jour' %>
+  <%= f.input :gender, label: 'Sexe', collection: [ "mâle", "femelle" ] %>
   <%= f.input :race %>
   <%= f.input :age %>
-  <%= f.input :zip_code %>
-  <%= f.input :city %>
-  <%= f.input :address %>
-  <p>Disponible? :</p>
+  <%= f.input :address, label: "Numéro et rue" %>
+  <%= f.input :zip_code , label: "Code postal" %>
+  <%= f.input :city, label: "Ville" %>
+
+  <p><strong>Disponible dans l'immediat :</strong></p>
   <%= f.collection_check_boxes :availability, [[true, 'Oui'] ,[false, 'Non']], :first, :last %>
 
   <div class="text-center"><%= f.button :submit, "validez", class: "btn btn-warning" %></div>
 
 <% end %>
+  </div>
  </div>
 </div>
