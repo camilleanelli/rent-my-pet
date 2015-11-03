@@ -1,0 +1,24 @@
+.share-links {
+  display: flex;
+  align-items: center;
+  &-item {
+    flex: 1 1 0;
+    backgroud-color: grey;
+    color: black;
+    font-size: 18px;
+    padding: 10px 0px;
+    padding-top: 40px 0px;
+    // margin: 0 5px;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: -150px; /* negative value of footer height */
+    height: 100px;
+    // clear:both;
+    padding-top:20px;
+    &:hover {
+      color: blue;
+    }
+  }
+}
