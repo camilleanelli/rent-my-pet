@@ -5,3 +5,22 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+10.times do
+
+  Cat.create(
+  :name   => Faker::Name.first_name,
+  :description    => Faker::Lorem.sentences,
+  :user_id => 2,
+  :gender => "male",
+  :availability => true,
+  :race => "roux",
+  :zip_code => 75000,
+  :city => "Paris",
+  :address => "Villa Gaudelet",
+
+)
+
+
+
+end
