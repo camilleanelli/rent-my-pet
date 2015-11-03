@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :cats
-  resources :pages
+  #resources :pages
 
   get 'pages/dashboard' => 'pages#dashboard'
+  get 'pages/home' => 'pages#home'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
