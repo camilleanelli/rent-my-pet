@@ -1,13 +1,17 @@
-<h4>La réservation du chat a bien été effectuée  </h4>
+<h4>Bravo vous venez de réserver un chat avec le service Rent My Cat</h4>
 
-<p>Vous avez réservé</p>
+<p>Récapitulatif de votre réserveration</p>
 
  <% current_user.bookings.each do |booking| %>
-  <p> <%= booking.cat.name %> </p>
-  <p> <%= booking.renter.last_name %> </p>
-  <p> <%= booking.renting_price %> </p>
-  <p> <%= booking.start_time %> </p>
-  <p> <%= booking.renting_price %> </p>
+  <p>AJOUTER UNE PHOTO DU CHAT</p>
+  <p> Vous avez réservé <%= booking.cat.name %> entre <%= booking.start_time %> et
+   <%= booking.end_time %> </p>
+  <p> Le propriétaire du chat est <%= @booking.cat.owner.first_name %> <%= @booking.cat.owner.last_name %> </p>
+  <p> Son addresse email est <%= @booking.cat.owner.email %> </p>
+  <p> La somme totale que vous devrez lui régler est de <%= booking.renting_price %> euros </p>
+
+  <p>N'hésitez pas à nous contacter sur notre addresse contact@rentmycat.miaou</p>
+
 
 
   <% end %>
