@@ -4,16 +4,23 @@
 <div class="thumbnail">
 <h2><%= cat.name %></h2>
 <p><%= cat.description %></p>
-<strong><%= cat.price %></strong>
-<p><%= cat.gender %></p>
-<p><%= cat.race %></p>
-<p><%= cat.age %></p>
+<strong><%= number_to_currency(cat.price, :unit => "€") + "/" + " " + "jour" %></strong>
 <h2>Adresse: </h2>
 <%= cat.address %>
 <%= cat.zip_code %>
 <%= cat.city %>
-<div><%= link_to "VOIR", cat_path(cat), class: "btn btn-warning" %></div>
 
+<div class="list-inline">
+<li>
+<%if cat.availability == true %>
+    <button type="button" class="btn btn-success">Disponible</button>
+<% else %>
+    <button type="button" class="btn btn-danger">Non disponible</button>
+<% end %>
+</li>
+
+<li><%= link_to "Voir", cat_path(cat), class: "btn btn-warning" %></li>
+</div>
 
 </div>
 <% end %>
