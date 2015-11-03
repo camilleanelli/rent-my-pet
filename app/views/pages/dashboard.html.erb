@@ -1,1 +1,17 @@
-dashboard.html.erb
+<h3>My Dashboard</h3>
+
+
+<h4>List of my cats</h4>
+
+<% current_user.cats.all.each do |cat| %>
+<p> <%= cat.name %> </p>
+<% end %>
+
+<h4>My bookings</h4>
+
+
+<% current_user.bookings.all.each do |booking| %>
+<p> <%= booking.start_time %> </p>
+<p> <%= booking.end_time %> </p>
+<p> <%= booking.renting_price %> </p>
+<% end %>
