@@ -1,9 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@import "awesome_navbar";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+//@import "awesome_navbar";
 @import "navbar_wagon";
 
-.form-new-cat {
-  padding: 20px;
-}
+@import "footer_layout";
+>>>>>>> 4d424087b94cea0b8f9eae0ae800e4d5da3fe41c
