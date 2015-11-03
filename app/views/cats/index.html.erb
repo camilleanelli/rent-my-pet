@@ -3,11 +3,11 @@
 <% @cats.each do |cat| %>
 <div class="thumbnail">
 <h2><%= cat.name %></h2>
-<%= cat.description %>
-<%= cat.price %>
-<%= cat.gender %>
-<%= cat.race %>
-
+<p><%= cat.description %></p>
+<strong><%= cat.price %></strong>
+<p><%= cat.gender %></p>
+<p><%= cat.race %></p>
+<h2>Adresse: </h2>
 <%= cat.address %>
 <%= cat.zip_code %>
 <%= cat.city %>
