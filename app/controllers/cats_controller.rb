@@ -42,7 +42,7 @@ class CatsController < ApplicationController
   private
 
   def set_cats
-    @cat = cats.find(params[:id])
+    @cat = Cat.find(params[:id])
   end
 
   def params_cats
