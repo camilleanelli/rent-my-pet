@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :cats do
-    resources :bookings, only: [:index, :new, :create, :destroy]
+    resources :bookings, only: [:show, :new, :create, :destroy]
   end
 
   #resources :pages

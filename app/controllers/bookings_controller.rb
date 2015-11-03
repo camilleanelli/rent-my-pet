@@ -21,5 +21,9 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:user_id, :cat_id, :renting_price, :start_time, :end_time)
   end
 
+  def destroy
+
+  end
+
 
 end
