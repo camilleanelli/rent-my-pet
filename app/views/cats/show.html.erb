@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1><%= @cat.name %></h1>
+      <div>TO DO: PICTURE</div>
+      <p><%= @cat.name + " " + "a :" + " " + @cat.age.to_s + " ans" %></p>
+      <p>sexe: <%= @cat.gender %></p>
+      <p><%= @cat.description %></p>
+      <p><%= @cat.price %></p>
+      <p><%= @cat.race %></p>
+
+
+    </div>
+    <div class="col-md-6">
+      <h1>Adresse: </h1>
+      <%= @cat.address %>
+      <%= @cat.zip_code %>
+      <%= @cat.city %>
+
+  <div>TO DO: GOOGLE MAP</div>
+    </div>
+  </div>
+</div>
+
+
+

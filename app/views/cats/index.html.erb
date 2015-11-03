@@ -1,5 +1,5 @@
 <div class="container">
-
+  <div class="row">
 <% @cats.each do |cat| %>
 <div class="thumbnail">
 <h2><%= cat.name %></h2>
@@ -7,13 +7,18 @@
 <strong><%= cat.price %></strong>
 <p><%= cat.gender %></p>
 <p><%= cat.race %></p>
+<p><%= cat.age %></p>
 <h2>Adresse: </h2>
 <%= cat.address %>
 <%= cat.zip_code %>
 <%= cat.city %>
+<div><%= link_to "VOIR", cat_path(cat), class: "btn btn-warning" %></div>
+
+<div>
 </div>
+
   <% end %>
 
 
-
+</div>
 </div>
