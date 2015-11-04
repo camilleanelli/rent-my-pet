@@ -14,7 +14,7 @@
     cursor: pointer;
     position: relative;
     margin-bottom: -120px; /* negative value of footer height */
-    margin-top: 10px;
+    margin-top: 280px;
     height: 100px;
     clear:both;
     padding-top: 25px;
@@ -23,4 +23,8 @@
       color: black;
     }
   }
+}
+
+body {
+padding: 0 auto;
 }
