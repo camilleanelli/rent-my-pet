@@ -10,7 +10,11 @@
       <p><%= @cat.race %></p>
 
       <div class="list-inline">
-      <li><button type="button" class="btn btn-warning">Réservez</button></li>
+      <li>
+      <%= form_for [@cat, @cat.bookings.new] do |f| %>
+        <%= f.submit "Réserver", class: "btn btn-warning active" %>
+      <% end %>
+      </li>
       <li><%= link_to "retour", cats_path, class: "btn btn-warning active" %></li>
     </div>
 
@@ -20,6 +24,11 @@
       <%= @cat.address %>
       <%= @cat.zip_code %>
       <%= @cat.city %>
+
+
+
+
+
 
     <div id="map" style="width: 100%; height: 500px;"></div>
 
