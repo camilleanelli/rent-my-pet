@@ -1,16 +1,35 @@
-<h3>My Dashboard</h3>
-<h4>List of my cats</h4>
-<% @cats.each do |cat| %>
-  <p><%= cat.name %></p>
-  <%= cat.picture %>
-  <ul class="list-inline">
-    <li><%= link_to "Supprimer", cat_path(cat), method: :delete %></li> |
-    <li><%= link_to "Modifier les infos", edit_cat_path(cat) %></li>
-  </ul>
-<% end %>
+<h3>Mon compte</h3>
+
 <h4>My bookings</h4>
 <% @bookings.each do |booking| %>
   <p> <%= booking.start_time %> </p>
   <p> <%= booking.end_time %> </p>
   <p> <%= booking.renting_price %> </p>
 <% end %>
+=======
+
+Welcome to you dashboard <%= current_user %>
+<h4>List of my cats</h4>
+
+<div class="container">
+    <div class="row">
+      <% @cats.each do |cat| %>
+      <div class="col-xs-12 col-sm-3">
+          <div class="thumbnail">
+            <p> <%= cat.name %> </p>
+            <%= image_tag cat.picture.url(:medium) %>
+            <ul class="list-inline">
+              <li><%= link_to "Supprimer", cat_path(cat), method: :delete %></li> |
+              <li><%= link_to "Modifier les infos", edit_cat_path(cat) %></li>
+            </ul>
+         </div>
+        </div>
+      <% end %>
+    </div>
+ </div>
+
+<div class="thumbail">
+<h4>My bookings</h4>
+</div>
+
+
