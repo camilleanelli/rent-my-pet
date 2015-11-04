@@ -1,6 +1,6 @@
 #banner-image {
 
-background-image: url('catforbanner.jpg');
+background-image: asset-url('catforbanner.jpg', image);
 background-size: cover;
 height: 550px;
 }
