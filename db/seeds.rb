@@ -11,15 +11,15 @@
   Cat.create(
   :name   => Faker::Name.first_name,
   :description  => Faker::Lorem.paragraph,
-  :user_id => 1,
+  # :user_id => 1,
   :gender => "male",
   :availability => true,
   :race => "roux",
   :age => Faker::Number.between(1, 17),
   :price => 10,
-  :zip_code => 75000,
+  :zip_code => 75004,
   :city => "Paris",
-  :address => "Villa Gaudelet",
+  :address => " 16 Villa Gaudelet",
 
 )
 
