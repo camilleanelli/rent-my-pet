@@ -4,7 +4,7 @@
 <div class="thumbnail">
 <h2><%= cat.name %></h2>
 <p><%= cat.description %></p>
-<strong><%= number_to_currency(cat.price, :unit => "€") + "/" + " " + "jour" %></strong>
+//<strong><%= cat.price %></strong>
 <h2>Adresse: </h2>
 <%= cat.address %>
 <%= cat.zip_code %>
@@ -12,10 +12,10 @@
 
 <div class="list-inline">
 <li>
-<%if cat.availability == true %>
-    <button type="button" class="btn btn-success">Disponible</button>
-<% else %>
+<%if cat.availability == false %>
     <button type="button" class="btn btn-danger">Non disponible</button>
+<% else %>
+    <button type="button" class="btn btn-success">Disponible</button>
 <% end %>
 </li>
 
