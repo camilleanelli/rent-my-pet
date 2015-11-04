@@ -34,6 +34,7 @@ gem 'faker'
 gem 'figaro'
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
+gem "geocoder"
 # Use Unicorn as the app server
 # gem 'unicorn'
 
