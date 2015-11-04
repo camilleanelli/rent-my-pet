@@ -17,7 +17,7 @@ gem 'devise'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
@@ -34,7 +34,14 @@ gem 'faker'
 gem 'figaro'
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
+
 gem "geocoder"
+gem "coffee-rails", '~> 4.1.0'
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 # Use Unicorn as the app server
 # gem 'unicorn'
 
