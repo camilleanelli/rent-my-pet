@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   #resources :pages
 
-  get 'pages/dashboard' => 'pages#dashboard'
-  get 'pages/home' => 'pages#home'
+  get 'dashboard' => 'pages#dashboard'
+  get 'home' => 'pages#home'
 
   get '/' => 'pages#home'
 
