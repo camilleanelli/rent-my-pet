@@ -5,9 +5,15 @@ class CatsController < ApplicationController
 
   def index
     @cats = Cat.all
+    @markers = Gmaps4rails.build_markers(@cats) do |cat, marker|
+      marker.lat cat.latitude
+      marker.lng cat.longitude
+    end
   end
 
   def show
+    @alert_message = "You are viewing #{@cat.name}"
+    @cat_coordinates = { lat: @cat.lat, lng: @cat.lng }
   end
 
   def new
