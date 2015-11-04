@@ -16,7 +16,11 @@
            <% @cats.last(4).each do |cat| %>
         <div class="col-xs-12 col-sm-3">
           <div class="thumbnail">
+
          <%= image_tag cat.picture.url(:medium) %>
+
+
+
             <h2><%= cat.name %></h2>
             <p><%= cat.description %></p>
             //<strong><%= cat.price %></strong>
