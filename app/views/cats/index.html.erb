@@ -1,9 +1,11 @@
 <div class="container">
-  <div class="row">
+   <div class="row">
     <% @cats.each do |cat| %>
-      <div class="thumbnail">
+       <div class="col-xs-12 col-sm-3">
+        <div class="thumbnail card-index">
+
+        <%= image_tag cat.picture.url(:medium) %>
         <h2><%= cat.name %></h2>
-        <%= cat.picture.url(:medium) %>
         <p><%= cat.description %></p>
         <strong><%= cat.price %></strong>
         <h2>Adresse: </h2>
@@ -21,6 +23,7 @@
           <li><i><%= link_to "", cat_path(cat), class: "fa fa-paw fa-3x" %></i></li>
         </div>
       </div>
+    </div>
     <% end %>
 
     <div id="map" style="width: 100%; height: 600px;"></div>
@@ -38,5 +41,5 @@
       <% end %>
     <% end %>
 
-  </div>
+
 </div>
