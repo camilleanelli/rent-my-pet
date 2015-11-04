@@ -2,10 +2,11 @@
   <div class="row">
   <div class="col-md-6 col-md-offset-3">
 <%= simple_form_for @cat do |f| %>
-  <%= f.input :picture %>
+
   <%= f.input :name, label: 'Nom:', placeholder: 'Boris' %>
+  <%= f.input :picture, label: 'Photo' %>
   <%= f.input :description, placeholder: 'Inscrivez toutes ses qualités!' %>
-  <%= f.input :price, label: 'Prix par jour' %>
+  <%= f.input :price, label: 'Prix par jour', placeholder: 'Mettre au moins 0 si pas de prix' %>
   <%= f.input :gender, label: 'Sexe', collection: [ "mâle", "femelle" ] %>
   <%= f.input :race %>
   <%= f.input :age %>

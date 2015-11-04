@@ -4,6 +4,7 @@ class Cat < ActiveRecord::Base
    validates :description, presence: true
    validates :gender, presence: true
   # validates_inclusion_of :gender, :in => [1,2]
+   validates :price, presence: true
    validates :zip_code, presence: true
    validates :city, presence: true
    validates :address, presence: true
