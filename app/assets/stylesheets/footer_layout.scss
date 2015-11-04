@@ -3,22 +3,24 @@
   align-items: center;
   &-item {
     flex: 1 1 0;
-    backgroud-color: grey;
-    color: black;
-    font-size: 18px;
-    padding: 10px 0px;
-    padding-top: 40px 0px;
-    // margin: 0 5px;
+    background: lightgrey;
+    border: black;
+    color: #D2527F;
+    font-size: 25px;
+    padding: 10px 10px;
+    padding-top: 30px 10px;
     text-align: center;
     border-radius: 2px;
     cursor: pointer;
     position: relative;
-    margin-bottom: -150px; /* negative value of footer height */
+    margin-bottom: -120px; /* negative value of footer height */
+    margin-top: 10px;
     height: 100px;
-    // clear:both;
-    padding-top:20px;
+    clear:both;
+    padding-top: 25px;
     &:hover {
-      color: blue;
+      font-size: 140%;
+      color: black;
     }
   }
 }
