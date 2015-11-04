@@ -7,6 +7,7 @@
 
     <div class="navbar-wagon-pusher"></div>
     <% if user_signed_in? %>
+      <%= current_user.picture %>
       <%= link_to "LOUER SON CHAT", new_cat_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
       <%= link_to "MON PROFIL", dashboard_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
       <%= link_to "LOG OUT",  destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-button btn", method: :delete %>

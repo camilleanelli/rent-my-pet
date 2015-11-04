@@ -48,6 +48,7 @@ source 'https://rails-assets.org' do
 end
 # Use Unicorn as the app server
 # gem 'unicorn'
+  gem 'omniauth-facebook'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
