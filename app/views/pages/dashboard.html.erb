@@ -1,17 +1,24 @@
 <h3>My Dashboard</h3>
 
-
+Welcome to you dashboard <%= current_user %>
 <h4>List of my cats</h4>
 
-<% current_user.cats.all.each do |cat| %>
-<p> <%= cat.name %> </p>
-<% end %>
+<div class="container">
+    <div class="row">
+      <% @cats.each do |cat| %>
+      <div class="col-xs-12 col-sm-3">
+          <div class="thumbnail">
+            <p> <%= cat.name %> </p>
+            <%= image_tag cat.picture.url(:medium) %>
 
+         </div>
+      </div>
+      <% end %>
+    </div>
+ </div>
+
+<div class="thumbail">
 <h4>My bookings</h4>
+</div>
 
 
-<% current_user.bookings.all.each do |booking| %>
-<p> <%= booking.start_time %> </p>
-<p> <%= booking.end_time %> </p>
-<p> <%= booking.renting_price %> </p>
-<% end %>
