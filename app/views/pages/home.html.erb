@@ -16,7 +16,7 @@
            <% @cats.last(3).each do |cat| %>
         <div class="col-xs-12 col-sm-4">
           <div class="thumbnail">
-            <%= cat.picture %>
+            <%= cat.picture.url(:thumb) %>
             <h2><%= cat.name %></h2>
             <p><%= cat.description %></p>
             //<strong><%= cat.price %></strong>
