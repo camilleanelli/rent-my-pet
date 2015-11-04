@@ -2,7 +2,7 @@
 
 background-image: url('catforbanner.jpg');
 background-size: cover;
-height: 600px;
+height: 550px;
 }
 
 
@@ -14,20 +14,31 @@ height: 600px;
 #banner-title {
 
   color: #FFFFFF;
+
   padding-top: 20px;
   padding-left: 30px;
+
+  .btn-success {
+
+ font-size: 25px;
+ padding: 25px;
+ margin-top: 60px;
+
+}
 }
 
 #last-cats-added-container {
 
-background-color: #EDEFED;
+ background-color: #EDEFED;
+ padding: 10px;
 
   h2 {
-
+  padding: 20px;
   margin-top: 0px;
 }
 
 
 
 }
+
 
