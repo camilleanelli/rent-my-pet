@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard
 
+    @cats = current_user.cats.all
   end
 
 end
