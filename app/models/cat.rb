@@ -2,7 +2,6 @@ class Cat < ActiveRecord::Base
   belongs_to :owner, :class_name => :User,:foreign_key => "user_id"
    validates :name, presence: true
    validates :description, presence: true
-   validates :gender, presence: true
   # validates_inclusion_of :gender, :in => [1,2]
    validates :price, presence: true
    validates :zip_code, presence: true

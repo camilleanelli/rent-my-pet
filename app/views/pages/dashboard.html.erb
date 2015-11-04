@@ -5,6 +5,7 @@
 
 <% current_user.cats.all.each do |cat| %>
 <p> <%= cat.name %> </p>
+<%= link_to "Supprimer", cat_path(@cat), method: :delete %>
 <% end %>
 
 <h4>My bookings</h4>
