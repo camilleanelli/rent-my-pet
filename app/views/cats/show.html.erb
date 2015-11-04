@@ -6,17 +6,20 @@
       <p><%= @cat.name + " " + "a :" + " " + @cat.age.to_s + " ans" %></p>
       <p>sexe: <%= @cat.gender %></p>
       <p><%= @cat.description %></p>
-      <p><%= @cat.price %></p>
+      <p> Prix par jour: <%= @cat.price %></p>
       <p><%= @cat.race %></p>
 
-      <div class="list-inline">
-      <li>
-      <%= form_for [@cat, @cat.bookings.new] do |f| %>
-        <%= f.submit "Réserver", class: "btn btn-warning active" %>
-      <% end %>
-      </li>
-      <li><%= link_to "retour", cats_path, class: "btn btn-warning active" %></li>
-    </div>
+
+          <div>
+        <%= simple_form_for [@cat, @cat.bookings.new] do |f| %>
+
+        <%= f.input :start_time, label: 'Début de la réservation' %>
+        <%= f.input :end_time, label: 'Fin de la réservation' %>
+         <%= f.submit "Réserver", class: "btn btn-warning active" %>
+        <% end %>
+          </div>
+      <%= link_to "retour", cats_path, class: "btn btn-warning active" %>
+
 
     </div>
     <div class="col-md-6">

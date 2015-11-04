@@ -10,13 +10,18 @@ class BookingsController < ApplicationController
 
   def create
     @cat = Cat.find(params[:cat_id])
-    @booking = @cat.bookings.new()
+    @booking = @cat.bookings.new(booking_params)
     @booking.renter = current_user
     if @booking.save
       redirect_to cat_booking_path(@cat, @booking)
     else
        render :new
      end
+  end
+
+  def total_price
+
+
   end
 
 
