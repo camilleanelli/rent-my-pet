@@ -5,11 +5,8 @@
 
   <%= f.input :name, label: 'Nom:', placeholder: 'Boris' %>
   <%= f.input :picture, label: 'Photo' %>
-  <%= f.input :description, placeholder: 'Inscrivez toutes ses qualités!' %>
+  <%= f.input :description, placeholder: 'Décrivez le au maximum! (son age, son caractère, etc...)' %>
   <%= f.input :price, label: 'Prix par jour', placeholder: 'Mettre au moins 0 si pas de prix' %>
-  <%= f.input :gender, label: 'Sexe', collection: [ "mâle", "femelle" ] %>
-  <%= f.input :race %>
-  <%= f.input :age %>
   <%= f.input :address, label: "Numéro et rue" %>
   <%= f.input :zip_code , label: "Code postal" %>
   <%= f.input :city, label: "Ville" %>

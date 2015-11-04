@@ -9,18 +9,16 @@
         <%= cat.address %>
         <%= cat.zip_code %>
         <%= cat.city %>
-      <div class="list-inline">
-        <li>
-        <%if cat.availability == false %>
-            <button type="button" class="btn btn-danger">Non disponible</button>
-        <% else %>
-            <button type="button" class="btn btn-success">Disponible</button>
-        <% end %>
-        </li>
-
-        <li><i><%= link_to "", cat_path(cat), class: "fa fa-paw fa-3x" %></i></li>
-      </div>
-
+        <div class="list-inline">
+          <li>
+            <%if cat.availability == false %>
+              <button type="button" class="btn btn-danger">Non disponible</button>
+            <% else %>
+              <button type="button" class="btn btn-success">Disponible</button>
+            <% end %>
+          </li>
+          <li><i><%= link_to "", cat_path(cat), class: "fa fa-paw fa-3x" %></i></li>
+        </div>
       </div>
     <% end %>
 
