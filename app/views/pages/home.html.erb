@@ -13,10 +13,10 @@
     <h2>Les derniers chats ajoutés</h2>
     <div class="container">
       <div class="row">
-           <% @cats.last(3).each do |cat| %>
-        <div class="col-xs-12 col-sm-4">
+           <% @cats.last(4).each do |cat| %>
+        <div class="col-xs-12 col-sm-3">
           <div class="thumbnail">
-            <%= cat.picture %>
+         <%= image_tag cat.picture.url(:medium) %>
             <h2><%= cat.name %></h2>
             <p><%= cat.description %></p>
             //<strong><%= cat.price %></strong>
