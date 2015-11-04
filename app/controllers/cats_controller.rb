@@ -46,7 +46,11 @@ class CatsController < ApplicationController
   end
 
   def destroy
-
+    if @cat.delete
+      redirect_to cats_path
+    else
+      render :destroy
+    end
   end
 
   private

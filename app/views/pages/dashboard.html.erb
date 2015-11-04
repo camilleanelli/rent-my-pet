@@ -1,4 +1,12 @@
-<h3>My Dashboard</h3>
+<h3>Mon compte</h3>
+
+<h4>My bookings</h4>
+<% @bookings.each do |booking| %>
+  <p> <%= booking.start_time %> </p>
+  <p> <%= booking.end_time %> </p>
+  <p> <%= booking.renting_price %> </p>
+<% end %>
+=======
 
 Welcome to you dashboard <%= current_user %>
 <h4>List of my cats</h4>
@@ -10,9 +18,12 @@ Welcome to you dashboard <%= current_user %>
           <div class="thumbnail">
             <p> <%= cat.name %> </p>
             <%= image_tag cat.picture.url(:medium) %>
-
+            <ul class="list-inline">
+              <li><%= link_to "Supprimer", cat_path(cat), method: :delete %></li> |
+              <li><%= link_to "Modifier les infos", edit_cat_path(cat) %></li>
+            </ul>
          </div>
-      </div>
+        </div>
       <% end %>
     </div>
  </div>

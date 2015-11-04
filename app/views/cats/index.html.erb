@@ -3,6 +3,7 @@
     <% @cats.each do |cat| %>
       <div class="thumbnail">
         <h2><%= cat.name %></h2>
+        <%= cat.picture.url(:medium) %>
         <p><%= cat.description %></p>
         <strong><%= cat.price %></strong>
         <h2>Adresse: </h2>
