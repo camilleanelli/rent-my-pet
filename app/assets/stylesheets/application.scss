@@ -16,12 +16,19 @@
 @import "showcat";
 @import "commons";
 
+
 @import "bookings";
+
+
+* {
+  box-sizing: border-box;
+
 
 .fa-paw {
   color: #D2527F;
 
 }
+
 
 .fa-paw:hover {
   text-decoration: none;

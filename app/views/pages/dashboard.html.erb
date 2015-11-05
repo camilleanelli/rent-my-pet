@@ -1,3 +1,4 @@
+
 <div id="dashboard-page-container">
     <p>Bonjour <%= current_user.first_name %>, bienvenue sur votre dashboard </p>
 
@@ -32,38 +33,34 @@
                         </tr>
                       </tbody>
 
+<div class="container" style="marging: auto">
+  <h3>Mon compte</h3>
+  <h5>Welcome to you dashboard <%= current_user.first_name%></h5>
 
-
-                </thead>
-              </table>
-            </div>
-          </div>
-       </div>
-
-
-        <div class="col-xs-12 col-sm-6">
-            <h4>List of my cats</h4>
-
-            <div class="container">
-                <div class="row">
-                  <% current_user.cats.each do |cat| %>
-                  <div class="col-xs-12 col-sm-3">
-                      <div class="thumbnail">
-                        <p> <%= cat.name %> </p>
-                        <%= image_tag cat.picture.url(:medium) %>
-                        <ul class="list-inline">
-                          <li><%= link_to "Supprimer", cat_path(cat), method: :delete %></li> |
-                          <li><%= link_to "Modifier les infos", edit_cat_path(cat) %></li>
-                        </ul>
-                     </div>
-                    </div>
-                  <% end %>
-                </div>
-             </div>
-         </div>
-
-
-      </div>
-    </div>
+  <div class="thumbail">
+    <h4>My bookings</h4>
+    <% @bookings.each do |booking| %>
+      <p><%= booking.start_time %></p>
+      <p><%= booking.end_time %></p>
+      <p><%= booking.renting_price %></p>
+    <% end %>
   </div>
+
+  <h4>List of my cats</h4>
+  <div class="container">
+    <div>
+    </div>
+      <% @cats.each do |cat| %>
+        <div class="col-xs-12 col-sm-3">
+          <div class="thumbnail card card-gradient col-xs-3 col-sm-3 col-md-3" style="background-image: url('<%=image_path cat.picture.url(:medium)%>')">
+            <p><%= cat.name %></p>
+              <ul class="list-inline">
+                <li><%= link_to "Supprimer", cat_path(cat), method: :delete %></li>
+                <li><%= link_to "Modifier les infos", edit_cat_path(cat) %></li>
+              </ul>
+          </div>
+        </div>
+      <% end %>
+   </div>
+
 </div>
