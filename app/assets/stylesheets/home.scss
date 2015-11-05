@@ -50,9 +50,14 @@ height: 550px;
   color: white;
 }
 
-.card-home h2:hover{
-    text-decoration: none;
-}
 
+.link-name {
+  color: white;
+  text-shadow: 2px 2px #D2527F;
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
 
 
