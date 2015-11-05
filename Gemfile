@@ -37,6 +37,7 @@ gem 'faker'
 gem 'figaro'
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
+gem 'pg_search'
 
 gem "geocoder"
 gem "coffee-rails", '~> 4.1.0'

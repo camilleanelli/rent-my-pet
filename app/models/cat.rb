@@ -1,4 +1,6 @@
 class Cat < ActiveRecord::Base
+  include PgSearch
+  pg_search_scope :search_by_city, :against => :city
   belongs_to :owner, :class_name => :User,:foreign_key => "user_id"
    validates :name, presence: true
    validates :description, presence: true
@@ -21,10 +23,6 @@ class Cat < ActiveRecord::Base
 
   def full_address
    [address, zip_code, city].compact.join(', ')
-  end
-
-  def self.search(search)
-    where("city LIKE ?", "%#{search}%")
   end
 
 
