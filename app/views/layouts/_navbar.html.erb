@@ -10,6 +10,10 @@
       <%= link_to "LOUER SON CHAT", new_cat_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
       <%= link_to "MON PROFIL", dashboard_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
       <%= link_to "LOG OUT",  destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-button btn", method: :delete %>
+      <%= image_tag current_user.picture, style:"height:80%", class: "navbar-wagon-item" %>
+      <p style="color:#FFFFFF;"> <strong> <%= current_user.first_name %>
+          <%= current_user.last_name %> </strong> </p>
+
     <% else %>
       <%= link_to "LOUER SON CHAT", new_cat_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
       <%= link_to "LOG IN" ,  new_user_session_path,      class: "navbar-wagon-item navbar-wagon-button btn" %>
