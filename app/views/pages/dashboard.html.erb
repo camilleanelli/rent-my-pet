@@ -54,7 +54,7 @@
         <div class="col-xs-12 col-sm-3">
           <div class="thumbnail card card-gradient col-xs-3 col-sm-3 col-md-3" style="background-image: url('<%=image_path cat.picture.url(:medium)%>')">
             <p><%= cat.name %></p>
-              <ul class="list-inline">
+              <ul class="list-inline btn" style=" margin-top: 180px">
                 <li><%= link_to "Supprimer", cat_path(cat), method: :delete %></li>
                 <li><%= link_to "Modifier les infos", edit_cat_path(cat) %></li>
               </ul>
