@@ -23,5 +23,10 @@ class Cat < ActiveRecord::Base
    [address, zip_code, city].compact.join(', ')
   end
 
+  def self.search(search)
+    where("city LIKE ?", "%#{search}%")
+  end
+
+
 end
 

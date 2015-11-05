@@ -9,7 +9,15 @@ class CatsController < ApplicationController
       marker.lat cat.latitude
       marker.lng cat.longitude
     end
-  end
+    if params[:search]
+      @cats = Cat.search(params[:search]).order("created_at DESC")
+    else
+      @cats = Cat.all.order('created_at DESC')
+    end
+end
+
+
+
 
   def show
     @alert_message = "You are viewing #{@cat.name}"

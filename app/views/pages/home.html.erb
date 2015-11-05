@@ -7,8 +7,18 @@
         <div id="btn-find-cat">
           <%= link_to "TROUVER UN CHAT", cats_path, class: "btn btn-success" %>
         </div>
+      <div class="text-center search-city">
+        <%= form_tag(cats_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search by city", size: "100x400" %>
+        <%= submit_tag "Search", class: "btn btn-success" %>
+        <% end %>
+      </div>
+
     </div>
  </div>
+
+
+
 
 
   <div id="last-cats-added-container" class="text-center">
@@ -16,15 +26,17 @@
     <div class="container">
       <div class="row">
         <% @cats.last(4).each do |cat| %>
-          <div class="col-xs-12 col-sm-3">
-            <div class="thumbnail">
-              <%= image_tag cat.picture.url(:medium) %>
-              <h2><%= cat.name %></h2>
-              <p><%= cat.description %></p>
-              <strong><%= cat.price %></strong>
+          <div class="col-xs-12 col-sm-3 card-home">
+
+              <div style="background-image:cat.picture.url" class="card-home">
+
+                </div>
+            <h2><%= cat.name %></h2>
+              <p><%= truncate(cat.description, :length => 14) %></p>
+              <strong><%= number_to_currency(cat.price, :unit => "€") + "/" + "jour" %></strong>
             <%= cat.city %>
           </div>
-        </div>
+
          <% end %>
       </div>
     </div>
