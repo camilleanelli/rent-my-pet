@@ -2,10 +2,11 @@
   position: relative;
   height: 250px;
   width: 250px;
-  // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  color: black;
+  text-shadow: 0 2px 3px rgba(0,0,0.1s,0.2);
+  color: white;
   margin: 3px;
   -webkit-background-size: cover;
+
 }
 
 .card-gradient {
@@ -15,4 +16,19 @@
   // top: 0;
   // bottom: 0;
   // width: 100%;
+}
+
+.position {
+  position: absolute;
+  bottom: 50px;
+  left: 15px;
+  font-size: 15px;
+}
+
+.position2 {
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+  font-size: 10px;
+  color: green;
 }
