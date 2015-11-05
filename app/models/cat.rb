@@ -11,16 +11,16 @@ class Cat < ActiveRecord::Base
 
   has_many :bookings
   has_attached_file :picture,
-    styles: { medium: "300x300>", thumb: "100x100>" }
+    styles: { medium: "300x300>", thumb: "100x100>", small: "200x200>"}
 
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
 
-  geocoded_by :address
+  geocoded_by :full_address
   after_validation :geocode, if: :address_changed?
 
-  def adress
-   [zip_code, city, address].compact.join(', ')
+  def full_address
+   [address, zip_code, city].compact.join(', ')
   end
 
 end
