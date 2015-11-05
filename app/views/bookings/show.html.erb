@@ -4,9 +4,9 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <div class="thumbnail" style="margin-top:20px; background-color:#89BF0F;">
+        <div class="thumbnail" style="margin-top:20px; background-color:#66CC99;">
 
-        <div class="text-center"> <h4>Bravo vous venez de réserver votre chat !!</h4>
+        <div class="text-center"> <h4> <strong> Bravo vous venez de réserver votre chat !! </strong> </h4>
         </div>
 
       </div>
@@ -19,22 +19,24 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <div class="thumbnail" style="background-color:#89BF0F;">
+        <div class="thumbnail" style="background-color:#C8F7C5;">
+        <h3 class="text-center"> <strong> Récapitulatif de votre réserveration </strong> </h3>
 
-        <h4 class="text-center"> Récapitulatif de votre réserveration </h4>
 
-
-           <%= image_tag @booking.cat.picture %>
-          <p> Vous avez réservé <%= @booking.cat.name %> entre <%= @booking.start_time %> et
-           <%= @booking.end_time %> </p>
-          <p> Le prix de la réservation est de <%= @booking.renting_price %> euros </p>
+           <%= image_tag @booking.cat.picture, style:"border-radius:80%; height:150px;" %>
+          <h4> Le chat réservé est: <%= @booking.cat.name %> </h4>
+          <h4> Vous l'avez réservé de <%= @booking.start_time %> à <%= @booking.end_time  %> </h4>
+          <h4> Le prix de la réservation est de <%= @booking.renting_price %> euros </h4>
 
 
           <p>N'hésitez pas à nous contacter sur notre addresse contact@rentmycat.miaou</p>
 
      </div>
-
     </div>
-
   </div>
 </div>
+
+ <ul class="list-inline text-center">
+          <li>  <%= link_to "Mon profil", dashboard_path, class: "btn btn-primary active btn-lg" %> </li>
+          <li>  <%= link_to "Retour", cats_path, class: "btn btn-warning active btn-lg" %> </li>
+ </ul>
