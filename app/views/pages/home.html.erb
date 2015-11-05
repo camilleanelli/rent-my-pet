@@ -20,12 +20,12 @@
       <div class="container">
         <div class="row">
           <% @cats.last(4).each do |cat| %>
-            <div class="col-xs-12 col-sm-3 card-home" style= "background-image: url('<%= image_path cat.picture.url(:medium)%>'); background-size:cover" >
+            <div class="col-xs-12 col-sm-3 card-home banner-gradient" style= "background-image: url('<%= image_path cat.picture.url(:medium)%>'); background-size:cover;" >
+              <div style="margin-top:150px">
               <h2><%= link_to cat.name, cat_path(cat), class: "link-name" %></h2>
-
-              <p><%= truncate(cat.description, :length => 14) %></p>
               <strong><%= number_to_currency(cat.price, :unit => "€") + "/" + "jour" %></strong>
               <p><%= cat.city %></p>
+             </div>
 
             </div>
            <% end %>
