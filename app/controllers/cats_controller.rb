@@ -4,12 +4,20 @@ class CatsController < ApplicationController
   before_action :set_cats, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cats = Cat.paginate(:page => params[:page], :per_page => 6)
+    @cats = Cat.paginate(:page => 1, :per_page => 6)
     @markers = Gmaps4rails.build_markers(@cats) do |cat, marker|
       marker.lat cat.latitude
       marker.lng cat.longitude
     end
+    if params[:city].present?
+      @cats = Cat.search_by_city(params[:city]).order("created_at DESC")
+    else
+      @cats = Cat.all.order('created_at DESC')
+    end
   end
+
+
+
 
   def show
     @alert_message = "You are viewing #{@cat.name}"

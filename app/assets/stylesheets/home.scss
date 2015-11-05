@@ -35,10 +35,24 @@ height: 550px;
   h2 {
   padding: 20px;
   margin-top: 0px;
+    }
 }
 
-
-
+.city {
+  position: relative;
+  color: black;
 }
+
+.card-home {
+  border: 5px solid white;
+  text-shadow: 1px 2px 3px(0,0,0,0,2);
+  height: 300px;
+  color: white;
+}
+
+.card-home h2:hover{
+    text-decoration: none;
+}
+
 
 
