@@ -4,9 +4,9 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <div class="thumbnail" style="margin-top:20px;">
+        <div class="thumbnail" style="margin-top:20px; background-color:#89BF0F;">
 
-        <div class="text-center"> <h4>Bravo vous venez d'envoyez une demande de réservation. Vous serez avertis par email lorsque le propriétaire aura validé votre demande.</h4>
+        <div class="text-center"> <h4>Bravo vous venez de réserver votre chat !!</h4>
         </div>
 
       </div>
@@ -19,15 +19,15 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <div class="thumbnail">
+        <div class="thumbnail" style="background-color:#89BF0F;">
 
-        <p>Récapitulatif de votre réserveration</p>
+        <h4 class="text-center"> Récapitulatif de votre réserveration </h4>
 
 
            <%= image_tag @booking.cat.picture %>
           <p> Vous avez réservé <%= @booking.cat.name %> entre <%= @booking.start_time %> et
            <%= @booking.end_time %> </p>
-          <p> La somme totale que vous devrez lui régler est de <%= @booking.renting_price %> euros </p>
+          <p> Le prix de la réservation est de <%= @booking.renting_price %> euros </p>
 
 
           <p>N'hésitez pas à nous contacter sur notre addresse contact@rentmycat.miaou</p>

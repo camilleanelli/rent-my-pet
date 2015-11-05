@@ -4,27 +4,28 @@
       <% @cats.each do |cat| %>
         <div class="thumbnail card card-gradient col-xs-3 col-sm-3 col-md-3" style="background-image: url('<%=image_path cat.picture.url(:medium)%>')">
           <h2><%= cat.name %></h2>
-          <strong><%= cat.price %>€/jour</strong>
-          <h2>Où?</h2>
-          <%= cat.address %>
+          <strong><h4><%= cat.price %>€/jour</h4></strong>
+          <p><%= cat.address %>
           <%= cat.zip_code %>
-          <%= cat.city %>
+          <%= cat.city %></p>
           <div class="list-inline">
-            <li>
+            <div>
+            <li class="position">
               <%if cat.availability == false %>
-                <button type="button" class="btn btn-danger">Non disponible</button>
+                <span style="color: red">Non disponible</span>
               <% else %>
-                <button type="button" class="btn btn-success">Disponible</button>
+                <span style="color: green">Disponible</span>
               <% end %>
             </li>
-            <li><i><%= link_to "", cat_path(cat), class: "fa fa-paw fa-3x" %></i></li>
+            </div>
+            <li class="position2"><%= link_to "RESERVER", cat_path(cat), class: "btn btn-success" %></li>
           </div>
         </div>
       <% end %>
      <%= will_paginate @cats %>
     </div>
 
-    <div class="container col-xs-12 col-sm-6 col-md-6">
+    <div class="container col-xs-6 col-sm-6 col-md-6">
     <div id="map" style="width: 100%; height: 759px;"></div>
 
     <% content_for(:after_js) do %>
