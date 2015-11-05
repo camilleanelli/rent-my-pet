@@ -1,32 +1,46 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <h1><%= @cat.name %></h1>
-      <%= image_tag @cat.picture.url(:medium) %>
-      <p><%= @cat.name + " " + "a :" + " " + @cat.age.to_s + " ans" %></p>
-      <p>sexe: <%= @cat.gender %></p>
-      <p><%= @cat.description %></p>
-      <p> Prix par jour: <%= @cat.price %></p>
-      <p><%= @cat.race %></p>
+
+        <div class="thumb-container">
+          <div class="thumbnail">
+             <table>
+               <thead>
+                   <tr>
+                       <th> <%= image_tag @cat.picture.url(:small) %> </th>
+                       <th style="padding:10px;">  <h4><strong> Nom du chaton:<%= @cat.name %> </strong></h4>
+                      <p> <strong> Les description du chat: </strong> <%= @cat.description %></p>
+                      <p> <strong> Prix par jour: </strong> <%= @cat.price %></p>
+                      <p><%= @cat.race %></p> </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+      </div>
 
 
-          <div>
+
+
+
+
+        <div class="thumbnail">
         <%= simple_form_for [@cat, @cat.bookings.new] do |f| %>
-
         <%= f.input :start_time, label: 'Début de la réservation' %>
         <%= f.input :end_time, label: 'Fin de la réservation' %>
-         <%= f.submit "Réserver", class: "btn btn-warning active" %>
+        <ul class="list-inline">
+          <li>  <%= f.submit "Réserver", class: "btn btn-success active" %> </li>
+          <li>  <%= link_to "retour", cats_path, class: "btn btn-warning active" %> </li>
+        </ul>
+
+       </div>
         <% end %>
-          </div>
-      <%= link_to "retour", cats_path, class: "btn btn-warning active" %>
-
-
     </div>
-    <div class="col-md-6">
-      <h1>Adresse: </h1>
-      <%= @cat.address %>
-      <%= @cat.zip_code %>
-      <%= @cat.city %>
+
+        <div class="col-md-6">
+          <h1>Adresse: </h1>
+          <%= @cat.address %>
+          <%= @cat.zip_code %>
+          <%= @cat.city %>
 
 
 

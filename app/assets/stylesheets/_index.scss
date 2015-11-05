@@ -1,0 +1,18 @@
+.card {
+  position: relative;
+  height: 250px;
+  width: 250px;
+  // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  color: black;
+  margin: 3px;
+  -webkit-background-size: cover;
+}
+
+.card-gradient {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.05) 80%);
+  border-radius: 3px;
+  // position: absolute;
+  // top: 0;
+  // bottom: 0;
+  // width: 100%;
+}

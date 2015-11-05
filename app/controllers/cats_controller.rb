@@ -4,7 +4,7 @@ class CatsController < ApplicationController
   before_action :set_cats, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cats = Cat.all
+    @cats = Cat.paginate(:page => params[:page], :per_page => 6)
     @markers = Gmaps4rails.build_markers(@cats) do |cat, marker|
       marker.lat cat.latitude
       marker.lng cat.longitude
@@ -22,10 +22,6 @@ end
   def show
     @alert_message = "You are viewing #{@cat.name}"
     @cat_coordinates = [{ lat: @cat.latitude, lng: @cat.longitude }]
-    # @markers = Gmaps4rails.build_markers(@cats) do |cat, marker|
-    #   marker.lat cat.latitude
-    #   marker.lng cat.longitude
-    # end
   end
 
   def new
