@@ -1,32 +1,31 @@
 <div class="container">
    <div class="row">
-    <% @cats.each do |cat| %>
-
-      <div class="thumbnail card card-gradient col-xs-6 col-sm-4 col-md-4">
-        <h2><%= cat.name %></h2>
-        <%= cat.picture.url(:medium) %>
-        <p><%= cat.description  %></p>
-
-        <strong><%= cat.price %></strong>
-        <h2>Adresse: </h2>
-        <%= cat.address %>
-        <%= cat.zip_code %>
-        <%= cat.city %>
-        <div class="list-inline">
-          <li>
-            <%if cat.availability == false %>
-              <button type="button" class="btn btn-danger">Non disponible</button>
-            <% else %>
-              <button type="button" class="btn btn-success">Disponible</button>
-            <% end %>
-          </li>
-          <li><i><%= link_to "", cat_path(cat), class: "fa fa-paw fa-3x" %></i></li>
+    <div class="row col-xs-6 col-sm-6 col-md-6" style="margin-top: 27px">
+      <% @cats.each do |cat| %>
+        <div class="thumbnail card card-gradient col-xs-3 col-sm-3 col-md-3" style="background-image: url('<%=image_path cat.picture.url(:medium)%>')">
+          <h2><%= cat.name %></h2>
+          <strong><%= cat.price %>€/jour</strong>
+          <h2>Où?</h2>
+          <%= cat.address %>
+          <%= cat.zip_code %>
+          <%= cat.city %>
+          <div class="list-inline">
+            <li>
+              <%if cat.availability == false %>
+                <button type="button" class="btn btn-danger">Non disponible</button>
+              <% else %>
+                <button type="button" class="btn btn-success">Disponible</button>
+              <% end %>
+            </li>
+            <li><i><%= link_to "", cat_path(cat), class: "fa fa-paw fa-3x" %></i></li>
+          </div>
         </div>
-      </div>
+      <% end %>
+      <%= will_paginate @cats %>
     </div>
-    <% end %>
 
-    <div id="map" style="width: 100%; height: 600px;"></div>
+    <div class="container col-xs-12 col-sm-6 col-md-6">
+    <div id="map" style="width: 100%; height: 759px;"></div>
 
     <% content_for(:after_js) do %>
       <%= javascript_tag do %>
@@ -40,8 +39,6 @@
         })
       <% end %>
     <% end %>
-
-
-
-
+    </div>
+ </div>
 </div>

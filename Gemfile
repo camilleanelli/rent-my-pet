@@ -49,6 +49,8 @@ end
 # Use Unicorn as the app server
 # gem 'unicorn'
   gem 'omniauth-facebook'
+  gem 'will_paginate-bootstrap'
+  gem 'will_paginate', '~> 3.0.6'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
