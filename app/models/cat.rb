@@ -16,11 +16,11 @@ class Cat < ActiveRecord::Base
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
 
-  geocoded_by :address
+  geocoded_by :full_address
   after_validation :geocode, if: :address_changed?
 
-  def adress
-   [zip_code, city, address].compact.join(', ')
+  def full_address
+   [address, zip_code, city].compact.join(', ')
   end
 
 end
