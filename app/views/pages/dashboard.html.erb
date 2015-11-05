@@ -1,3 +1,38 @@
+
+<div id="dashboard-page-container">
+    <p>Bonjour <%= current_user.first_name %>, bienvenue sur votre dashboard </p>
+
+  <div class="container">
+
+    <div class="row">
+
+       <div class="col-xs-12 col-sm-6" >
+            <div class="thumbnail">
+                  <h4 class="text-center"> Liste de vos réservations </h4>
+              <% @bookings.each do |booking| %>
+           <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th> Chat </th>
+                    <th> Début </th>
+                    <th> Fin </th>
+                     <th> Prix </th>
+                   </tr>
+                     <tbody>
+                      <tr>
+
+
+                      <td><p>  <%= booking.cat.name %> </p> </td>
+                      <td>  <%= booking.start_time %> </td>
+                      <td>  <%= booking.end_time %> </td>
+                      <td>  <%= booking.renting_price %> </td>
+
+                      <% end %>
+
+                        </tr>
+                      </tbody>
+
 <div class="container" style="marging: auto">
   <h3>Mon compte</h3>
   <h5>Welcome to you dashboard <%= current_user.first_name%></h5>
@@ -29,5 +64,3 @@
    </div>
 
 </div>
-
-
