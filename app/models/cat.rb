@@ -21,6 +21,8 @@ class Cat < ActiveRecord::Base
   geocoded_by :full_address
   after_validation :geocode, if: :address_changed?
 
+  paginates_per 6
+
   def full_address
    [address, zip_code, city].compact.join(', ')
   end
