@@ -5,7 +5,7 @@
   <div class="form-group">
     <%= form_tag('/cats', method: "get")  do %>
       <div class="form-group">
-      <%= text_field_tag :city, nil, class: "form-control", placeholder: "Rechercher par ville", autosave: true, autofocus: true, style: "height:55px;width: 300px" %>
+      <%= text_field_tag :city, nil, class: "form-control", placeholder: "Rechercher par ville", autosave: true, autofocus: true, style: "height:50px;width: 380px" %>
         </div>
           <%= button_tag(type: "submit", class: "btn btn-success") do %>
             <h5>Rechercher</h5>
@@ -18,8 +18,8 @@
    <div class="row">
     <div class="row col-xs-6 col-sm-6 col-md-6" style="margin-top: 27px">
       <% @cats.each do |cat| %>
-        <div class="thumbnail card card-gradient card-hover col-xs-3 col-sm-3 col-md-3" style="background-image: url('<%=image_path cat.picture.url(:medium)%>')">
-          <h2><%= cat.name %></h2>
+        <div class="thumbnail card card-hover card-gradient col-xs-3 col-sm-3 col-md-3" style="background-image: url('<%=image_path cat.picture.url(:medium)%>')">
+          <h2 class="hover"><%= cat.name %></h2>
           <strong><h4><%= cat.price %>€/jour</h4></strong>
           <p><%= cat.city %></p>
 
@@ -33,12 +33,14 @@
               <% end %>
             </li>
             </div>
-            <li class="position2"><%= link_to "RESERVER", cat_path(cat), class: "btn btn-success" %></li>
+            <li class="positions"><%= link_to "RESERVER", cat_path(cat), class: "btn btn-success" %></li>
           </div>
         </div>
       <% end %>
+
       <%= paginate @cats %>
     </div>
+
 
     <div class="container col-xs-6 col-sm-6 col-md-6">
     <div id="map" style="width: 100%; height: 759px;"></div>
@@ -58,3 +60,22 @@
     </div>
  </div>
 </div>
+
+<% content_for :after_js do %>
+
+ <!-- Include Google Maps JS API -->
+ <script type="text/javascript"
+   src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key= AIzaSyAyi0K8taljUqo81J5MakHfzIzHFgrMg2U">
+ </script>
+
+ <!-- Custom JS code to bind to Autocomplete API -->
+ <!-- find it here: https://github.com/lewagon/google-place-autocomplete/blob/gh-pages/autocomplete.js -->
+ <!-- We'll detail this file in the article -->
+ <!-- <script type="text/javascript" src="autocomplete.js"></script> -->
+ <%= javascript_tag do %>
+     google.maps.event.addDomListener(window, 'load', function() {
+     initializeAutocomplete('user_input_autocomplete_city');
+     });
+ <% end %>
+
+<% end %>
