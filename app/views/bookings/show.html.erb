@@ -19,14 +19,14 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <div class="thumbnail" style="background-color:#C8F7C5;">
-        <h3 class="text-center"> <strong> Récapitulatif de votre réserveration </strong> </h3>
 
+        <div class="thumbnail" style="background-color:#C8F7C5; padding:20px;">
+          <%= image_tag @booking.cat.picture, style:"border-radius:80%; height:150px;" %>
+           <h4 class="text-center" style="margin-top:20px;"> <strong> Récapitulatif de votre réserveration </strong> </h4>
+          <h4 style="margin-top:20px;"> Le chat réservé est: <strong> <%= @booking.cat.name %> </strong> </h4>
+          <h4> Vous l'avez réservé de <strong><%= @booking.start_time %> à <%= @booking.end_time  %> </strong> </h4>
+          <h4> Le prix de la réservation est de <strong> <%= @booking.renting_price %> euros </strong> </h4>
 
-           <%= image_tag @booking.cat.picture, style:"border-radius:80%; height:150px;" %>
-          <h4> Le chat réservé est: <%= @booking.cat.name %> </h4>
-          <h4> Vous l'avez réservé de <%= @booking.start_time %> à <%= @booking.end_time  %> </h4>
-          <h4> Le prix de la réservation est de <%= @booking.renting_price %> euros </h4>
           <p>N'hésitez pas à nous contacter sur notre addresse contact@rentmycat.miaou</p>
 
      </div>
