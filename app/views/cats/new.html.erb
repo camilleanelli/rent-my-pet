@@ -10,13 +10,32 @@ margin-left: 30px;">
   <%= f.input :price, label: 'Prix par jour', placeholder: 'Mettre au moins 0 si pas de prix' %>
   <%= f.input :address, label: "Numéro et rue" %>
   <%= f.input :zip_code , label: "Code postal" %>
-  <%= f.input :city, label: "Ville" %>
+  <%= f.input :city, label: "Ville", input_html: {id: "user_input_autocomplete_city"} %>
 
   <p><strong>Disponible dans l'immediat :</strong></p>
   <%= f.collection_check_boxes :availability, [[true, 'Oui'] ,[false, 'Non']], :first, :last %>
-  <div class="text-center" style="margin-bottom:15px"><%= f.button :submit, "valider", class: "btn btn-warning" %></div>
+  <div class="text-center" style="margin-bottom:15px"><%= f.button :submit, "valider", class: "btn btn-success", style: "font-size:20px;" %></div>
 
 <% end %>
   </div>
  </div>
 </div>
+
+<% content_for :after_js do %>
+
+ <!-- Include Google Maps JS API -->
+ <script type="text/javascript"
+   src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key= AIzaSyAyi0K8taljUqo81J5MakHfzIzHFgrMg2U">
+ </script>
+
+ <!-- Custom JS code to bind to Autocomplete API -->
+ <!-- find it here: https://github.com/lewagon/google-place-autocomplete/blob/gh-pages/autocomplete.js -->
+ <!-- We'll detail this file in the article -->
+ <!-- <script type="text/javascript" src="autocomplete.js"></script> -->
+ <%= javascript_tag do %>
+     google.maps.event.addDomListener(window, 'load', function() {
+     initializeAutocomplete('user_input_autocomplete_city');
+     });
+ <% end %>
+
+<% end %>

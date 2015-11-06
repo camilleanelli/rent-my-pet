@@ -5,7 +5,7 @@
   <div class="form-group">
     <%= form_tag('/cats', method: "get")  do %>
       <div class="form-group">
-      <%= text_field_tag :city, nil, class: "form-control", placeholder: "Rechercher par ville", autosave: true, autofocus: true, style: "height:50px;width: 380px" %>
+      <%= text_field_tag :city, nil, class: "form-control", placeholder: "Rechercher par ville", autosave: true, autofocus: true, style: "height:50px;width: 380px", id: "user_input_autocomplete_city" %>
         </div>
           <%= button_tag(type: "submit", class: "btn btn-success") do %>
             <h5>Rechercher</h5>
