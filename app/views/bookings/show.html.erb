@@ -24,8 +24,8 @@
 
 
            <%= image_tag @booking.cat.picture, style:"border-radius:80%; height:150px;" %>
-          <h4> Le chat réservé est: <%= @booking.cat.name %> </h4>
-          <h4> Vous l'avez réservé de <%= @booking.start_time %> à <%= @booking.end_time  %> </h4>
+          <h4> <%= @booking.cat.name %> à bien été réservé
+          de <%= @booking.start_time %> à <%= @booking.end_time  %> </h4>
           <h4> Le prix de la réservation est de <%= @booking.renting_price %> euros </h4>
 
 

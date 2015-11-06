@@ -14,7 +14,7 @@
    <div class="row">
     <div class="row col-xs-6 col-sm-6 col-md-6" style="margin-top: 27px">
       <% @cats.each do |cat| %>
-        <div class="thumbnail card card-gradient col-xs-3 col-sm-3 col-md-3" style="background-image: url('<%=image_path cat.picture.url(:medium)%>')">
+        <div class="thumbnail card card-gradient card-hover col-xs-3 col-sm-3 col-md-3" style="background-image: url('<%=image_path cat.picture.url(:medium)%>')">
           <h2><%= cat.name %></h2>
           <strong><h4><%= cat.price %>€/jour</h4></strong>
           <p><%= cat.city %>
