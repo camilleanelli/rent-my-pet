@@ -15,7 +15,7 @@
     <div class="row">
        <div class="col-xs-12 col-sm-6" >
             <div class="thumbnail" style="background-color:#FFFAEF">
-                  <h4 class="text-center"> Liste de vos réservations </h4>
+                  <h4 class="text-center"> Mes réservations </h4>
               <% @bookings.each do |booking| %>
            <div class="table-responsive" style="background-color:#FFFAEF">
               <table class="table">
@@ -32,9 +32,9 @@
                         <tr>
 
                           <td> <%= booking.cat.name %> </td>
-                          <td>  <%= booking.start_time %> </td>
-                          <td>  <%= booking.end_time %> </td>
-                          <td>  <%= booking.renting_price %> </td>
+                          <td> <%= booking.start_time %> </td>
+                          <td> <%= booking.end_time %> </td>
+                          <td> <%= booking.renting_price %> </td>
 
                       <% end %>
                         </tr>
@@ -47,7 +47,7 @@
 
       <div class="col-xs-12 col-sm-6" >
         <div class="thumbnail" style="background-color:#FFFAEF">
-          <h4>Liste de mes chats</h4>
+          <h4 class="text-center">Mes chats</h4>
         </div>
             <% @cats.each do |cat| %>
                 <div class="thumbnail card card-gradient col-xs-3 col-sm-3 col-md-3" style="background-image: url('<%=image_path cat.picture.url(:medium)%>'); margin-left:10px; margin-right:15px;">
