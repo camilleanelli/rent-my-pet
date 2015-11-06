@@ -22,11 +22,20 @@
 }
 
 
+.position {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  font-size: 15px;
+}
 
-// .position {
-//   position: absolute;
-//   bottom: 50px;
-//   left: 15px;
-//   font-size: 15px;
-// }
+.positions {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-size: 15px;
+}
 
+.hover {
+  font-size: 150%;
+}
