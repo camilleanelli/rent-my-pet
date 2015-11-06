@@ -34,7 +34,7 @@
           </div>
         </div>
       <% end %>
-     <%= will_paginate @cats %>
+      <%= paginate @cats, :window => 6 %>
     </div>
 
     <div class="container col-xs-6 col-sm-6 col-md-6">
