@@ -64,3 +64,23 @@
 
 
 </div>
+
+
+<% content_for :after_js do %>
+
+ <!-- Include Google Maps JS API -->
+ <script type="text/javascript"
+   src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key= AIzaSyAyi0K8taljUqo81J5MakHfzIzHFgrMg2U">
+ </script>
+
+ <!-- Custom JS code to bind to Autocomplete API -->
+ <!-- find it here: https://github.com/lewagon/google-place-autocomplete/blob/gh-pages/autocomplete.js -->
+ <!-- We'll detail this file in the article -->
+ <!-- <script type="text/javascript" src="autocomplete.js"></script> -->
+ <%= javascript_tag do %>
+     google.maps.event.addDomListener(window, 'load', function() {
+     initializeAutocomplete('user_input_autocomplete_city');
+     });
+ <% end %>
+
+<% end %>
