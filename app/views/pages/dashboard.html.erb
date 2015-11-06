@@ -14,9 +14,9 @@
   <div class="container">
     <div class="row">
        <div class="col-xs-12 col-sm-6" >
-            <div class="thumbnail" style="background-color:#FFFAEF">
-                  <h4 class="text-center"> Mes réservations </h4>
-              <% @bookings.each do |booking| %>
+          <div class="thumbnail" style="background-color:#FFFAEF">
+             <h4 class="text-center"> Mes réservations </h4>
+                <% @bookings.each do |booking| %>
            <div class="table-responsive" style="background-color:#FFFAEF">
               <table class="table">
                 <thead>
@@ -42,6 +42,7 @@
              </table>
         </div>
       </div>
+      <%= link_to "Retour", cats_path, class: "btn btn-warning" %>
     </div>
 
 
