@@ -1,66 +1,66 @@
 
 <div id="dashboard-page-container">
-    <p>Bonjour <%= current_user.first_name %>, bienvenue sur votre dashboard </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12" >
+        <div class="thumbnail" style="background-color:#FFFAEF; padding:10px;">
+    Bonjour <%= current_user.first_name %>, bienvenue sur votre dashboard ! Vous pouvez y consulter l'historique de vos réservations ainsi que les profils de vos chats.
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="container">
-
     <div class="row">
-
        <div class="col-xs-12 col-sm-6" >
-            <div class="thumbnail">
+            <div class="thumbnail" style="background-color:#FFFAEF">
                   <h4 class="text-center"> Liste de vos réservations </h4>
               <% @bookings.each do |booking| %>
-           <div class="table-responsive">
+           <div class="table-responsive" style="background-color:#FFFAEF">
               <table class="table">
                 <thead>
                   <tr>
+
                     <th> Chat </th>
                     <th> Début </th>
                     <th> Fin </th>
-                     <th> Prix </th>
+                    <th> Prix </th>
                    </tr>
+                </thead>
                      <tbody>
-                      <tr>
+                        <tr>
 
-
-                      <td><p>  <%= booking.cat.name %> </p> </td>
-                      <td>  <%= booking.start_time %> </td>
-                      <td>  <%= booking.end_time %> </td>
-                      <td>  <%= booking.renting_price %> </td>
+                          <td> <%= booking.cat.name %> </td>
+                          <td>  <%= booking.start_time %> </td>
+                          <td>  <%= booking.end_time %> </td>
+                          <td>  <%= booking.renting_price %> </td>
 
                       <% end %>
-
                         </tr>
-                      </tbody>
-
-<div class="container" style="marging: auto">
-  <h3>Mon compte</h3>
-  <h5>Welcome to you dashboard <%= current_user.first_name%></h5>
-
-  <div class="thumbail">
-    <h4>My bookings</h4>
-    <% @bookings.each do |booking| %>
-      <p><%= booking.start_time %></p>
-      <p><%= booking.end_time %></p>
-      <p><%= booking.renting_price %></p>
-    <% end %>
-  </div>
-
-  <h4>List of my cats</h4>
-  <div class="container">
-    <div>
-    </div>
-      <% @cats.each do |cat| %>
-        <div class="col-xs-12 col-sm-3">
-          <div class="thumbnail card card-gradient col-xs-3 col-sm-3 col-md-3" style="background-image: url('<%=image_path cat.picture.url(:medium)%>')">
-            <p><%= cat.name %></p>
-              <ul class="list-inline btn" style=" margin-top: 180px">
-                <li><%= link_to "Supprimer", cat_path(cat), method: :delete %></li>
-                <li><%= link_to "Modifier les infos", edit_cat_path(cat) %></li>
-              </ul>
-          </div>
+                     </tbody>
+             </table>
         </div>
-      <% end %>
-   </div>
+      </div>
+    </div>
+
+
+      <div class="col-xs-12 col-sm-6" >
+        <div class="thumbnail" style="background-color:#FFFAEF">
+          <h4>Liste de mes chats</h4>
+        </div>
+            <% @cats.each do |cat| %>
+                <div class="thumbnail card card-gradient col-xs-3 col-sm-3 col-md-3" style="background-image: url('<%=image_path cat.picture.url(:medium)%>'); margin-left:10px; margin-right:15px;">
+                  <p style="font-size:20px;"><%= cat.name %></p>
+                    <ul class="list-inline btn" style=" margin-top: 160px; padding-left: 0px;">
+                      <li><%= link_to "Supprimer", cat_path(cat), method: :delete, class:"btn btn-warning" %></li>
+                      <li><%= link_to "Modifier les infos", edit_cat_path(cat), class:"btn btn-primary" %></li>
+                    </ul>
+
+                </div>
+  <% end %>
+          </div>
+      </div>
+
 
 </div>
