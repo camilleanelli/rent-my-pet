@@ -8,9 +8,9 @@
                <thead>
                    <tr>
                        <th> <%= image_tag @cat.picture.url(:small) %> </th>
-                       <th style="padding:10px;">  <h4><strong> Nom du chaton:<%= @cat.name %> </strong></h4>
-                      <p> <strong> Les description du chat: </strong> <%= @cat.description %></p>
-                      <p> <strong> Prix par jour: </strong> <%= @cat.price %></p>
+                       <th style="padding:10px;">  <h4><strong><%= @cat.name %></strong></h4>
+                      <p> <strong> Description: </strong> <%= @cat.description %></p>
+                      <p> <strong> Prix par jour: </strong> <%= number_to_currency(@cat.price, :unit => "€") %></p>
                       <p><%= @cat.race %></p> </th>
                     </tr>
                 </thead>
